@@ -5,7 +5,7 @@ const Home = ({ isLoggedIn, history }) => {
   return (
     <Segment textAlign="center">
     <Header as="h1" textAlign="center">
-      Welcome to Auth-II
+      Welcome to Dad Jokes
     </Header>
     {
       !isLoggedIn &&

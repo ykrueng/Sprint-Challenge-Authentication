@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Segment, Header, Card } from 'semantic-ui-react';
 
 class JokeList extends React.Component {
   componentDidMount() {
@@ -19,11 +19,16 @@ class JokeList extends React.Component {
   render() {
     const { jokes } = this.props;
     return (
+    <Segment textAlign="center">
+      <Header as="h1" textAlign="center">
+        Welcome to Dad Jokes
+      </Header>
       <Card.Group
         style={{
           display: 'flex',
           alignItems: 'flex-start',
-          justifyContent: 'center'
+            justifyContent: 'center',
+            marginTop: '30px',
         }}
       >
         {
@@ -36,6 +41,7 @@ class JokeList extends React.Component {
           ))
         }
       </Card.Group>
+    </Segment>
     );
   }
 }
