@@ -4,9 +4,15 @@ const jwtKey =
   process.env.JWT_SECRET ||
   'add a .env file to root of project with the JWT_SECRET variable';
 
+const options = {
+  expiresIn: "1h",
+  jwtid: "12345" //jti
+};
+
 // quickly see what this file exports
 module.exports = {
   authenticate,
+  generateToken,
 };
 
 // implementation details
@@ -26,4 +32,8 @@ function authenticate(req, res, next) {
       error: 'No token provided, must be set on the Authorization Header',
     });
   }
+}
+
+function generateToken(objId) {
+  return jwt.sign(objId, jwtKey, options);
 }
